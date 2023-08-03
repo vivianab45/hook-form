@@ -29,24 +29,42 @@ const UserForm = (props) => {
             <div>
                 <label>First Name: </label> 
                 <input type="text" value={firstName} onChange={ (e) => setFirstName(e.target.value) } />
+                {
+                    firstName>0 && firstName.length< 2? <p style={{color:"red"}}> First Name must be at least 2 characters.</p>:<p></p>
+                }
             </div>
             <div>
                 <label>Last Name: </label> 
                 <input type="text" value={lastName} onChange={ (e) => setLastName(e.target.value) } />
+                {
+                    lastName.length>0 && lastName.length< 2? <p style={{color:"red"}}> Last Name must be at least 2 characters.</p>:<p></p>
+                }
             </div>
             <div>
                 <label>Email Address: </label> 
                 <input type="email" value={email} onChange={ (e) => setEmail(e.target.value) } />
+                {
+                    email.length>0 && email.length< 5 ?<p style={{color:"red"}}> Email must be at least 5 characters.</p>:<p></p>
+                }
             </div>
             <div>
                 <label>Password: </label>
                 <input type="password" value={password} onChange={ (e) => setPassword(e.target.value) } />
+                {
+                    password.length>0 && password.length< 8? <p style={{color:"red"}}> Password must be at least 8 characters.</p>:<p></p>
+                }
             </div>
             <div>
             <label>Confirm Password: </label>
                 <input type="password" value={confirmPassword} onChange={ (e) => setConfirmPassword(e.target.value) } />
-            <input type="submit" value="Create User" />
+                {
+                    confirmPassword>0 && confirmPassword.length< 8 ? <p style={{color:"red"}}> Confirm Password must be at least 8 characters.</p> : <p></p>
+                }
+                                {
+                    confirmPassword.length>0 && password !==confirmPassword? <p style={{color:"red"}}> Passwords must match.</p>:<p></p>
+                }
             </div>
+            <input type="submit" value="Create User" />
         </form>
         <Display firstName={firstName} lastName= {lastName} email={email} password={password} confirmPassword={confirmPassword}/>
         </div>
