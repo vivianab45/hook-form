@@ -36,15 +36,15 @@ const UserForm = (props) => {
             </div>
             <div>
                 <label>Email Address: </label> 
-                <input type="text" value={email} onChange={ (e) => setEmail(e.target.value) } />
+                <input type="email" value={email} onChange={ (e) => setEmail(e.target.value) } />
             </div>
             <div>
                 <label>Password: </label>
-                <input type="text" value={password} onChange={ (e) => setPassword(e.target.value) } />
+                <input type="password" value={password} onChange={ (e) => setPassword(e.target.value) } />
             </div>
             <div>
             <label>Confirm Password: </label>
-                <input type="text" value={confirmPassword} onChange={ (e) => setConfirmPassword(e.target.value) } />
+                <input type="password" value={confirmPassword} onChange={ (e) => setConfirmPassword(e.target.value) } />
             <input type="submit" value="Create User" />
             </div>
         </form>
